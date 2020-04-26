@@ -1,0 +1,10 @@
+.app-container {
+  background-color: silver;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .router-outlet {
+    flex-grow: 8;
+  }
+}

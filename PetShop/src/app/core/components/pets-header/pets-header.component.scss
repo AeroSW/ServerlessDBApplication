@@ -1,0 +1,49 @@
+.pets-stickier {
+  box-shadow: 0 0 8px 3px black;
+  height: 100%;
+  z-index: 20;
+
+  .pets-header {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    height: 85px;
+    align-items: baseline;
+    box-sizing: border-box;
+    background-color: rgb(164, 206, 230);
+
+    h3 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-right: 5px;
+      font-size: 1.6rem;
+    }
+
+    h2 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-size: 2.4rem;
+    }
+  }
+
+  .pets-navbar {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 8px 20px 10px 20px;
+    background-color: rgb(155, 212, 186);
+    height: 45px;
+
+    .pets-nav-route {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0px;
+      margin-right: 8px;
+      font-size: 1.2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      text-shadow: 0 2px 2px black;
+      font-weight: bolder;
+    }
+  }
+}

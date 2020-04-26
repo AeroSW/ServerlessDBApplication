@@ -1,0 +1,9 @@
+<div class="pets-stickier">
+  <div class="pets-header">
+    <h3>Welcome to the</h3>
+    <h2>Pet Shop!</h2>
+  </div>
+  <div class="pets-navbar">
+    <a *ngFor="let routeLink of routeLinks" routerLink='{{routeLink.path}}' class="pets-nav-route">{{routeLink.name}}</a>
+  </div>
+</div>
