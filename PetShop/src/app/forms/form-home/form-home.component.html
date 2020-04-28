@@ -1,0 +1,8 @@
+<div class="form-home-body">
+  <h1>Available Forms</h1>
+  <ul class="form-list">
+    <li *ngFor="let form of availableForms" class="form-item">
+      <button class="form-button" routerLink="{{form.path}}">{{form.name}}</button>
+    </li>
+  </ul>
+</div>

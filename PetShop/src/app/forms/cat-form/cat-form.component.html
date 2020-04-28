@@ -1,1 +1,44 @@
-<p>cat-form works!</p>
+<form [formGroup]="catForm" class="form-page" (ngSubmit)="submitCat()">
+  <div class="form-card">
+    <h1>New Cat Record</h1>
+    <div class="form-row">
+      <mat-form-field class="mat-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" [formControlName]="'name'" />
+      </mat-form-field>
+      <mat-form-field class="mat-full-width">
+        <mat-label>Weight</mat-label>
+        <input matInput placeholder="Weight" [formControlName]="'weight'" />
+      </mat-form-field>
+    </div>
+    <div class="form-row float-left">
+      <mat-checkbox [formControlName]="'outdoor'">
+        Outdoor
+      </mat-checkbox>
+    </div>
+    <mat-form-field class="mat-full-width">
+      <mat-label>Owner</mat-label>
+      <input matInput placeholder="Owner" [formControlName]="'owner'" />
+    </mat-form-field>
+    <mat-form-field class="mat-full-width">
+      <mat-label>Address</mat-label>
+      <input matInput placeholder="Address" [formControlName]="'address'" />
+    </mat-form-field>
+    <div class="form-row">
+      <mat-form-field class="mat-full-width">
+        <mat-label>Breed</mat-label>
+        <mat-select [formControlName]="'breed'">
+          <mat-option *ngFor="let breed of cat_breeds" [value]="breed.id">{{breed.name | titlecase}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="mat-full-width">
+        <mat-label>Breeder</mat-label>
+        <input matInput placeholder="Breeder" [formControlName]="'breeder'" />
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <button mat-stroked-button color="accent" type="submit" [disabled]="catForm.invalid || true">Submit</button>
+      <button mat-stroked-button color="warn" type="button" (click)="clearForm()">Clear</button>
+    </div>
+  </div>
+</form>

@@ -33,6 +33,7 @@ namespace AccessLibrary
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Pet API", Version = "v1" });
             });
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,7 +41,7 @@ namespace AccessLibrary
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                var f = true;
             }
             // enable middleware to serve generated Swagger as JSON Endpoint
             app.UseSwagger();
@@ -55,6 +56,16 @@ namespace AccessLibrary
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            if (env.IsDevelopment())
+            {
+                app.UseCors(options => {
+                    options.WithOrigins("http://localhost:4200")
+                        .AllowAnyHeader()
+                        .AllowCredentials()
+                        .AllowAnyMethod();
+                });
+            }
 
             app.UseAuthorization();
 

@@ -5,6 +5,9 @@ import { DogFormComponent } from './dog-form/dog-form.component';
 import { CatFormComponent } from './cat-form/cat-form.component';
 import { FormsComponent } from './forms.component';
 import { FormsRoutingModule } from './forms-routing.module';
+import { FormHomeComponent } from './form-home/form-home.component';
+import { CoreModule } from 'src/app/core/core.module';
+import { MaterialThemeModule } from 'src/app/core/modules/material-theme/material-theme.module';
 
 
 
@@ -12,12 +15,15 @@ import { FormsRoutingModule } from './forms-routing.module';
   declarations: [
     DogFormComponent,
     CatFormComponent,
-    FormsComponent
+    FormsComponent,
+    FormHomeComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
+    CoreModule,
+    MaterialThemeModule,
     FormsRoutingModule
   ],
   bootstrap: [FormsComponent]

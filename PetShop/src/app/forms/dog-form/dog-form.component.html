@@ -1,1 +1,54 @@
-<p>dog-form works!</p>
+<form [formGroup]="dogForm" class="form-page" (ngSubmit)="submitDog()">
+  <div class="form-card">
+    <h1>New Dog Record</h1>
+    <mat-form-field class="mat-full-width">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" [formControlName]="'name'" />
+    </mat-form-field>
+    <div class="form-row">
+      <mat-form-field class="mat-full-width">
+        <mat-label>Weight</mat-label>
+        <input matInput placeholder="Weight" [formControlName]="'weight'" />
+      </mat-form-field>
+      <mat-form-field class="mat-full-width">
+        <mat-label>Height</mat-label>
+        <input matInput placeholder="Height" [formControlName]="'height'" />
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-checkbox [formControlName]="'attack'">
+        Attack
+      </mat-checkbox>
+      <mat-checkbox [formControlName]="'outdoor'">
+        Outdoor
+      </mat-checkbox>
+      <mat-checkbox [formControlName]="'service'">
+        Service
+      </mat-checkbox>
+    </div>
+    <mat-form-field class="mat-full-width">
+      <mat-label>Owner</mat-label>
+      <input matInput placeholder="Owner" [formControlName]="'owner'" />
+    </mat-form-field>
+    <mat-form-field class="mat-full-width">
+      <mat-label>Address</mat-label>
+      <input matInput placeholder="Address" [formControlName]="'address'" />
+    </mat-form-field>
+    <div class="form-row">
+      <mat-form-field class="mat-full-width">
+        <mat-label>Breed</mat-label>
+        <mat-select [formControlName]="'breed'">
+          <mat-option *ngFor="let breed of dog_breeds" [value]="breed.id">{{breed.name | titlecase}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="mat-full-width">
+        <mat-label>Breeder</mat-label>
+        <input matInput placeholder="Breeder" [formControlName]="'breeder'" />
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <button mat-stroked-button color="accent" type="submit" [disabled]="dogForm.invalid">Submit</button>
+      <button mat-stroked-button color="warn" type="button" (click)="clearForm()">Clear</button>
+    </div>
+  </div>
+</form>

@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { PetsHeaderComponent } from './core/components/pets-header/pets-header.component';
 import { PetsFooterComponent } from './core/components/pets-footer/pets-footer.component';
 import { HomeComponent } from './home/home.component';
-import { PetFormsModule } from './forms/pet-forms.module';
+import { CoreModule } from './core/core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { PetFormsModule } from './forms/pet-forms.module';
   ],
   imports: [
     BrowserModule,
-    //PetFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
