@@ -28,7 +28,7 @@ namespace AccessLibrary
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddSingleton<IPetRepository, PetRepository>();
-            services.AddTransient<IPetRepository, PetRepository>();
+            services.AddSingleton<IPetRepository, PetRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Pet API", Version = "v1" });
