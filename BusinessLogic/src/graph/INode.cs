@@ -6,6 +6,8 @@ namespace BusinessLogic.src.graph
 {
     public interface INode: IComparable<INode>
     {
-        string key { get; }
+        string Key { get; }
+        string Type { get; }
+        int CompareTo<G>(Node<G> node);
     }
 }

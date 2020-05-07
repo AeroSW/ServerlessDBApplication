@@ -40,12 +40,7 @@ export class CatFormComponent implements OnInit {
     let keys: string[] = Object.keys(tempCat);
     let group = {};
     keys.forEach(key => {
-      /*if (typeof tempCat[key] === 'boolean') {
-        group[key] = [""];
-      }
-      else {*/
-        group[key] = [tempCat[key], [Validators.required]];
-      //}
+      group[key] = [tempCat[key], [Validators.required]];
     });
     this.catForm = this._fb.group(group);
     this.initial_form = this.catForm.getRawValue();
